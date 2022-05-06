@@ -1,13 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-
-type Data = {
-  name: string
-}
+import EventData from '../../utils/EventData.json'
+import {EventDataType} from '../../types'
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<EventDataType[]>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json(EventData)
 }
